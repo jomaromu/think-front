@@ -1,0 +1,54 @@
+<div class="container-fluid" id="navContainer">
+    <div class="row">
+        <div class="col-12" id="colNav">
+            <nav>
+                <div id="divLogo">
+                    <!-- <img src="" alt="thinktranslation.com"> -->
+                    <h3>thinktranslation</h3>
+                </div>
+                <div id="enlaces">
+                    <ul>
+                        <a>
+                            <li>Inicio</li>
+                        </a>
+                        <a>
+                            <li>Sobre nosotros</li>
+                        </a>
+                        <a>
+                            <li>Servicios</li>
+                        </a>
+                        <a>
+                            <li>Contacto</li>
+                        </a>
+                    </ul>
+                </div>
+                <div id="selecIdioma">
+                    <i class="fas fa-globe-americas"></i>
+                    <select name="selecIdioma" id="selecIdioma">
+                        <option value="es">Español</option>
+                        <option value="en">Inglés</option>
+                    </select>
+                </div>
+                <div id="botonToggle" #botonToggle (click)="mostrarMenu($event)">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div id="navToggle" class="animate__animated" #navToggle>
+                    <ul>
+                        <a>
+                            <li>Inicio</li>
+                        </a>
+                        <a>
+                            <li>Sobre nosotros</li>
+                        </a>
+                        <a>
+                            <li>Servicios</li>
+                        </a>
+                        <a>
+                            <li>Contacto</li>
+                        </a>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
