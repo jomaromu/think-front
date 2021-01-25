@@ -12,8 +12,8 @@ export class CorreoService {
 
   enviarCorreo(data): Observable<any> {
 
-    // const url = 'https://back.grupoautopanama.com/envio';
-    const url = 'http://localhost:3000/envio';
+    const url = 'https://correo.thinktranslations.com/envio';
+    // const url = 'http://localhost:3000/envio';
     return this.http.post<any>(url, data )
       .pipe(
         map((resp: any) => {

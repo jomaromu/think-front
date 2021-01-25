@@ -52,7 +52,7 @@ export class NavComponent implements OnInit {
       navToggle.classList.add('animate__bounceOutLeft');
       setTimeout(() => {
         navToggle.style.display = 'none';
-      }, 1000);
+      }, 500);
       this.bandera = false;
     }
   }
