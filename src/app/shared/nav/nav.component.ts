@@ -2,11 +2,11 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-navegacion',
-  templateUrl: './navegacion.component.html',
-  styleUrls: ['./navegacion.component.css']
+  selector: 'app-nav',
+  templateUrl: './nav.component.html',
+  styleUrls: ['./nav.component.css']
 })
-export class NavegacionComponent implements OnInit {
+export class NavComponent implements OnInit {
 
   @ViewChild('botonToggle', { static: true }) botonToggle: ElementRef<HTMLElement>;
   @ViewChild('navToggle', { static: true }) navToggle: ElementRef<HTMLElement>;
@@ -56,5 +56,4 @@ export class NavegacionComponent implements OnInit {
       this.bandera = false;
     }
   }
-
 }

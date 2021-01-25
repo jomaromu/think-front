@@ -1,22 +1,20 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validator, FormArray, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-
-import { CorreoService } from '../../servicios/correo.service';
+import { CorreoService } from '../../../servicios/correo.service';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-inicio',
-  templateUrl: './inicio.component.html',
-  styleUrls: ['./inicio.component.css']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class InicioComponent implements OnInit {
+export class HomeComponent implements OnInit {
 
   forma: FormGroup;
   spinner = false;
   @ViewChild('botonFormulario', { static: true }) botonFormulario: ElementRef<HTMLElement>;
 
-  constructor(private fb: FormBuilder, private correoService: CorreoService, private router: Router) { }
+  constructor(private fb: FormBuilder, private correoService: CorreoService) { }
 
   ngOnInit(): void {
     this.carrusel();
@@ -170,4 +168,5 @@ export class InicioComponent implements OnInit {
       });
     }
   }
+
 }

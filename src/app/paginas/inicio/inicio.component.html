@@ -1,17 +1,17 @@
 <app-navegacion></app-navegacion>
 <!-- landing -->
 <div class="container-fluid">
-    <div class="row">
+    <div class="row" id="rowInicio">
         <div class="col-12 col-sm-12">
             <div id="divLanding">
                 <img src="../../../assets/shape-general.jpg" class="imgShapes">
                 <img src="../../../assets/shape-general.jpg" class="imgShapes">
                 <div id="descLanding">
                     <div id="divDescLanding">
-                        <h3>Bienvendi@ a thinktranslation</h3>
-                        <p>Traducimos todos tipo de documentos, con la rapidez y calidad que usted necesita.</p>
-                        <p>Igualamos el precio de otras cotizaciones y le incluimos un <span>5%</span> de descuento a la misma.</p>
-                        <button id="btnLanding"><i class="fas fa-pencil-alt"></i> Cotice sin compromiso</button>
+                        <h3>Bienvendi@ a thinktranslations</h3>
+                        <p>Traducimos todo tipo de documentos, con la rapidez y calidad que usted necesita.</p>
+                        <p><span>Igualamos el precio</span> de otras cotizaciones y le incluimos un <span>5%</span> de descuento a la misma.</p>
+                        <a href="#rowContacto"><button id="btnLanding"><i class="fas fa-pencil-alt"></i> Cotice sin compromiso</button></a>
                     </div>
                     <div id="divImgLanding">
                         <img src="../../../assets/landing-img.png" id="imgLanding">
@@ -21,15 +21,15 @@
         </div>
     </div>
     <!-- sobre nosotros -->
-    <div class="row">
+    <div class="row" id="rowSobre">
         <div class="col-12 col-lg-12" id="colSobre">
             <img src="../../../assets/shape-general.jpg" id="spotSobre">
             <div id="sobreNosotros">
                 <div id="divSobreNosotros">
                     <h3 class="txtSobre">Sobre nosotros</h3>
                     <p class="txtSobre">Somos una empresa que presta los servicios de traducción e Interpretación de diversos idiomas.</p>
-                    <p class="txtSobre">En Think Translations, nos gusta trabajar con rapidez,</p>
-                    <p class="txtSobre">sin que esto signifique comprometer la precisión y calidad de cada entrega.</p>
+                    <p class="txtSobre">En Think Translations, nos gusta trabajar con prontitud,</p>
+                    <p class="txtSobre">sin comprometer la precisión y calidad de cada entrega.</p>
                     <p class="txtSobre">Esto nos ha hecho acreedores de la confianza y lealtad de nuestros clientes.</p>
                 </div>
                 <div id="divImgSobre">
@@ -39,16 +39,15 @@
         </div>
     </div>
     <!-- servicios -->
-    <div class="row">
-        <div class="col-10 col-lg-8 col-md-10 col-sm-12" id="colServicios">
+    <div class="row" id="rowServicios">
+        <div class="col-10 col-lg-10 col-md-10 col-sm-10" id="colServicios">
             <!-- <img src="../../../assets/shape-general.jpg" id="imgServicios"> -->
             <div id="divServicios">
                 <h3>Nuestros servicios</h3>
                 <div>
-                    <h6>Traducciones de documentos:</h6>
-
                     <div id="divItemServ">
                         <div>
+                            <h6>Traducciones de documentos:</h6>
                             <p><i class="fas fa-file-signature"></i> Médicos</p>
                             <p><i class="fas fa-file-signature"></i> Técnicos</p>
                             <p><i class="fas fa-file-signature"></i> Revistas</p>
@@ -56,16 +55,19 @@
                             <p><i class="fas fa-file-signature"></i> Certificados matrimoniales</p>
                             <p><i class="fas fa-file-signature"></i> Material educativo</p>
                             <p><i class="fas fa-file-signature"></i> Créditos escolares</p>
-                            <p><i class="fas fa-file-signature"></i> Servicios de transcripción de videos, audios y entrevistas</p>
-                        </div>
-                        <div>
                             <p><i class="fas fa-file-signature"></i> Legales</p>
                             <p><i class="fas fa-file-signature"></i> Patentes</p>
                             <p><i class="fas fa-file-signature"></i> Servicios de subtitulado</p>
+                        </div>
+                        <div>
+                            <h6>Servicio de transcripción:</h6>
+                            <p><i class="fas fa-file-signature"></i> Servicios de transcripción de videos, audios y entrevistas</p>
                             <p><i class="fas fa-file-signature"></i> Sitios web entre otros</p>
+                        </div>
+                        <div>
+                            <h6>Servicio de interpretación:</h6>
                             <p><i class="fas fa-file-signature"></i> Servicios de Interpretación presenciales</p>
                             <p><i class="fas fa-file-signature"></i> Telefónicas y video remotas (plataformas digitales)</p>
-                            <p><i class="fas fa-file-signature"></i> Sitios web entre otros</p>
                         </div>
                     </div>
                 </div>
@@ -98,7 +100,7 @@
         </div>
     </div>
     <!-- contacto -->
-    <div class="row" style="position: relative; display: flex; justify-content: center; align-items: center;">
+    <div class="row" id="rowContacto" style="position: relative; display: flex; justify-content: center; align-items: center;">
         <div class="col-12 col-lg-10 col-sm-12" id="colContacto">
             <div id="divContacto">
                 <h3>Contacto</h3>
@@ -110,15 +112,24 @@
                             frameborder="0" aria-hidden="false"></iframe>
                     </div>
                     <div id="formulario">
-                        <form>
+                        <form [formGroup]="forma" (ngSubmit)="enviarCorreo()">
                             <div id="divLogoForm">
                                 <img src="../../../assets/logo-whats-blanco.png" alt="thinktranslation">
                             </div>
-                            <p>¿Cuál es su inquietúd?</p>
-                            <input type="text" id="nombre" name="nombre" placeholder="Nombre...">
-                            <input type="text" id="correo" name="correo" placeholder="Correo...">
-                            <textarea name="mensaje" id="mensaje" cols="30" rows="7" placeholder="Escriba su consulta..."></textarea>
-                            <button type="submit"><i class="fas fa-envelope"></i> Enviar mensaje</button>
+                            <p>Realice su consulta...</p>
+
+                            <!-- nombre -->
+                            <small *ngIf="nombreNoValido" class="text-danger">* Mínimo 3 carácteres, máximo 30</small>
+                            <input type="text" id="nombre" name="nombre" formControlName="nombre" placeholder="Nombre...">
+
+                            <!-- correo -->
+                            <small *ngIf="correoNoValido" class="text-danger">* Ingrese un correo válido</small>
+                            <input type="text" id="correo" name="correo" formControlName="correo" placeholder="Correo...">
+
+                            <!-- mensaje -->
+                            <small *ngIf="mensajeNoValido" class="text-danger">* Mínimo 5 carácteres, máximo 500</small>
+                            <textarea name="mensaje" id="mensaje" cols="30" rows="7" formControlName="mensaje" placeholder="Escriba su consulta..."></textarea>
+                            <button type="submit" #botonFormulario><i class="fas fa-envelope"></i> Enviar mensaje</button>
                         </form>
                     </div>
                 </div>
@@ -127,6 +138,6 @@
         <img src="../../../assets/shape-general.jpg" id="spotContacto">
     </div>
     <!-- boton whatsap -->
-    <a href="https://api.whatsapp.com/send?phone=50764250106&text=Hola,%20quisiera%20hacerle%20una%20pregunta" target="_blank"> <i id="botonWhats" class="fab fa-whatsapp"></i></a>
+    <a href="https://api.whatsapp.com/send?phone=50764209554&text=Hola,%20quisiera%20hacerle%20una%20pregunta" target="_blank"> <i id="botonWhats" class="fab fa-whatsapp"></i></a>
 </div>
 <app-footer></app-footer>
